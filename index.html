@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self' ws://localhost:*; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:"
+    />
+    <title>Indexr</title>
+    <link rel="icon" href="./favicon.png" />
+    <script type="module" crossorigin src="./assets/index-BvSMuaPf.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-zhspwhKJ.css">
+  </head>
+  <body>
+    <div id="viewport"></div>
+    <div id="hud">
+      <div class="hud-group bar-left">
+        <span class="wordmark">Indexr</span>
+        <div class="bar-menu">
+          <button id="board-button" type="button" aria-expanded="false">My Board</button>
+          <div id="board-menu" class="bar-popover" hidden>
+            <div id="board-list"></div>
+            <div class="menu-rule"></div>
+            <button id="new-board" type="button">New Board…</button>
+            <button id="rename-board" type="button">Rename This Board…</button>
+            <div class="menu-rule web-only"></div>
+            <button id="download-backup" class="web-only" type="button">Download a Backup</button>
+            <button id="open-backup" class="web-only" type="button">Open a Backup…</button>
+            <input id="backup-file" type="file" accept=".json,application/json" hidden />
+          </div>
+        </div>
+        <span id="snapshot-name"></span>
+        <span id="save-status"></span>
+        <span id="selection"></span>
+      </div>
+      <div class="hud-group bar-center">
+        <div class="segmented">
+          <button id="mode-freeform" type="button">Freeform</button>
+          <button id="mode-rows" type="button">Rows</button>
+          <button id="lanes-button" type="button">Lanes</button>
+        </div>
+        <button id="match-button" type="button"></button>
+      </div>
+      <div class="hud-group bar-right">
+        <div class="segmented">
+          <button id="threads-button" type="button" aria-expanded="false">Threads</button>
+          <button id="numbers-button" type="button">Numbers</button>
+          <button id="look-button" type="button" aria-expanded="false">Look</button>
+          <button id="snapshots-button" type="button" aria-expanded="false">Snapshots</button>
+        </div>
+        <div class="side-picker">
+          <span class="label">Side</span>
+          <div id="side-view" class="segmented"></div>
+        </div>
+        <div class="zoom-control">
+          <button id="zoom-out" type="button" aria-label="Zoom out" title="Zoom out (⌘−)">−</button>
+          <button id="zoom" type="button" title="Fit everything (⌘0)"></button>
+          <button id="zoom-in" type="button" aria-label="Zoom in" title="Zoom in (⌘+)">+</button>
+        </div>
+        <button id="keys-button" type="button" aria-expanded="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts">?</button>
+        <button id="export-button" type="button">Export</button>
+      </div>
+      <div class="keys" hidden>
+        <span><kbd>Return</kbd> new card</span>
+        <span><kbd>D</kbd> divider</span>
+        <span><kbd>⌘Return</kbd> next card</span>
+        <span><kbd>Space</kbd> open large</span>
+        <span><kbd>Space</kbd> + drag: pan</span>
+        <span><kbd>R</kbd> Rows</span>
+        <span><kbd>B</kbd> new row at card</span>
+        <span><kbd>L</kbd> Lanes</span>
+        <span><kbd>N</kbd> numbers</span>
+        <span><kbd>F</kbd> flip a card</span>
+        <span><kbd>1</kbd>–<kbd>9</kbd> threads</span>
+        <span><kbd>⌘Z</kbd> undo</span>
+        <span><kbd>⌘D</kbd> duplicate</span>
+        <span><kbd>⌥⌘C</kbd> copy whole card</span>
+        <span><kbd>⌥⌘V</kbd> paste whole card</span>
+        <span><kbd>⌫</kbd> to Tray</span>
+        <span><kbd>⌘0</kbd> fit all</span>
+        <span><kbd>⌘1</kbd> close up</span>
+        <span><kbd>⌥</kbd> + drag: toggle snapping</span>
+        <span><kbd>⌘⇧S</kbd> snapshot</span>
+        <span><kbd>⌘E</kbd> export</span>
+        <span><kbd>Esc</kbd> cancel</span>
+      </div>
+    </div>
+    <div id="measure"></div>
+    <div id="banner" hidden>
+      <span id="banner-text"></span>
+      <button id="banner-close" type="button">OK</button>
+    </div>
+    <div id="welcome" hidden>
+      <div class="welcome-card">
+        <h1 id="welcome-title">Welcome to Indexr</h1>
+        <p id="welcome-text"></p>
+        <div class="welcome-buttons">
+          <button id="welcome-retry" type="button" hidden>Try Again</button>
+          <button id="welcome-choose" type="button" class="primary">Choose a Folder…</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
